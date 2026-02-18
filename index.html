@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustafa Ali | Stream Hub</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="fireCanvas"></canvas>
+
+    <div class="main-container">
+        
+        <header>
+            <div class="profile-pic">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h1>MUSTAFA ALI</h1>
+            <p class="subtitle">Gaming & AI Content Creator</p>
+        </header>
+
+        <nav class="nav-grid">
+            <button class="nav-btn active" onclick="showSection('home')"><i class="fa-solid fa-house"></i> الرئيسية</button>
+            <button class="nav-btn" onclick="showSection('support')"><i class="fa-solid fa-crown"></i> الدعم</button>
+            <button class="nav-btn" onclick="showSection('social')"><i class="fa-brands fa-instagram"></i> سوشيال</button>
+            <button class="nav-btn" onclick="showSection('feedback')"><i class="fa-solid fa-chart-line"></i> تطوير البث</button>
+            <button class="nav-btn" onclick="showSection('messages')"><i class="fa-solid fa-envelope"></i> رسائل</button>
+            <button class="nav-btn" onclick="showSection('memories')"><i class="fa-solid fa-images"></i> الذكريات</button>
+        </nav>
+
+        <div class="content-area">
+            
+            <section id="home" class="section active-section">
+                <h2>👋 منورين يا أساطير</h2>
+                <p>المكان ده هو المقر الرسمي لكل متابعين البث. هنا تقدر تدعم، تقترح ألعاب، وتبعت رسايل توصلني شخصياً.</p>
+                <div style="margin-top: 20px; color: #aaa; font-size: 0.9rem;">
+                    <i class="fa-solid fa-quote-right"></i> نورتوا البث يا وحوش! <i class="fa-solid fa-quote-left"></i>
+                </div>
+            </section>
+
+            <section id="support" class="section">
+                <h2>💎 الدعم المادي</h2>
+                <p>دعمك بيفرق جداً في تطوير جودة الستريم وشراء ألعاب جديدة.</p>
+                <a href="https://tip.dokan.sa/mustafa4536" target="_blank" class="action-btn glow-gold">
+                    اضغط هنا للدعم <i class="fa-solid fa-coins"></i>
+                </a>
+            </section>
+
+            <section id="social" class="section">
+                <h2>🌐 تابعني في كل مكان</h2>
+                <div class="links-list">
+                    <a href="https://www.instagram.com/msta5863/" class="social-card insta"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61558681213565" class="social-card fb"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                    <a href="https://www.youtube.com/@mustafa_ali8078" class="social-card yt"><i class="fa-brands fa-youtube"></i> Gaming Channel</a>
+                    <a href="https://www.youtube.com/@thesarmadai1" class="social-card ai"><i class="fa-solid fa-robot"></i> AI Channel</a>
+                </div>
+            </section>
+
+            <section id="feedback" class="section">
+                <h2>📈 رأيك يهمنا</h2>
+                <p>ساعدنا نطور البث بإجابتك على الأسئلة دي:</p>
+                
+                <form id="feedback-form" action="https://formspree.io/f/mykdkqza" method="POST">
+                    <input type="hidden" name="Subject" value="استبيان تطوير البث">
+
+                    <label class="form-label">ايه رأيك في جودة البث حالياً؟</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="Quality" value="Excellent"> 🔥 ممتازة</label>
+                        <label><input type="radio" name="Quality" value="Good"> 👍 جيدة</label>
+                        <label><input type="radio" name="Quality" value="Bad"> 👎 محتاجة تحسين</label>
+                    </div>
+
+                    <label class="form-label">تحب نلعب ايه الفترة الجاية؟</label>
+                    <select name="NextGame" class="custom-select">
+                        <option value="Horror">ألعاب رعب 👻</option>
+                        <option value="Shooter">ألعاب شوتر (FPS) 🔫</option>
+                        <option value="Story">ألعاب تختيم وقصة 📖</option>
+                        <option value="Minecraft">ماين كرافت 🧱</option>
+                        <option value="Other">شيء آخر (اكتب في الملاحظات)</option>
+                    </select>
+
+                    <label class="form-label">ملاحظات إضافية:</label>
+                    <textarea name="Notes" placeholder="اكتب أي فكرة في دماغك..."></textarea>
+
+                    <button type="submit" class="action-btn">ارسال الاقتراح 🚀</button>
+                    <div class="status-msg"></div>
+                </form>
+            </section>
+
+            <section id="messages" class="section">
+                <h2>📩 رسالة عالسريع</h2>
+                <form id="msg-form" action="https://formspree.io/f/mykdkqza" method="POST">
+                    <input type="hidden" name="Subject" value="رسالة عامة">
+                    <input type="text" name="Name" placeholder="الاسم (اختياري)">
+                    <textarea name="Message" placeholder="اكتب رسالتك هنا..." required></textarea>
+                    <button type="submit" class="action-btn">ارسال</button>
+                    <div class="status-msg"></div>
+                </form>
+            </section>
+
+            <section id="memories" class="section">
+                <h2>📸 جدار الفضايح</h2>
+                <div class="empty-state">
+                    <i class="fa-solid fa-hammer"></i>
+                    <p>المكان ده تحت الإنشاء...<br>بنجمع "الكليبات" اللي بتضحك 😂</p>
+                </div>
+            </section>
+
+        </div>
+
+        <footer>
+            <p>DESIGNED BY <span class="creator">بني آدم براس فرخة 🐔</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
