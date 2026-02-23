@@ -33,7 +33,7 @@ async function handleFormSubmit(event, formId) {
         });
 
         if (response.ok) {
-            statusDiv.innerHTML = "✅ وصلت يا وحش!";
+            statusDiv.innerHTML = "الرسايل واقفه مؤقتا";
             statusDiv.className = "status-msg success-msg";
             form.reset();
         } else {
@@ -167,4 +167,5 @@ function animateFire() {
 
 // التشغيل
 initFire();
+
 animateFire();
